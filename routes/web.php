@@ -18,5 +18,6 @@ Route::get('/', function (){
     return view("welcome");
 });
 
+Route::get('/listado', [EmpleadosController::class,"index"])->name("empleados.index");
 Route::get('/alta', [EmpleadosController::class,"alta"])->name("empleados.alta");
 Route::post('/guardar', [EmpleadosController::class,"guardar"])->name("empleados.guardar");

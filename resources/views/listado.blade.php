@@ -22,16 +22,50 @@
         <script src="https://kit.fontawesome.com/b88595612a.js" crossorigin="anonymous"></script>
     </head>
     <body class="">
-        <h3 class="text-center p-3">Proyecto Empleados</h3>
+        <h3 class="text-center p-3">Listado de Empleados</h3>
+        <div class="p-3 table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+        
+            <thead class="bg-primary text-white">
+              <tr>
+                <th scope="col">idlegajo</th>
+                <th scope="col">apellido</th>
+                <th scope="col">nombre</th>
+                <th scope="col">direccion</th>
+                <th scope="col">localidad</th>
+                <th scope="col">id_tipo_documento</th>
+                <th scope="col">tipo_documento</th>
+                <th scope="col">nrodocumento</th>
+                <th scope="col">codigopostal</th>
+                <th scope="col">id_provincia</th>
+                <th scope="col">provincia</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @foreach ($datos as $item)
+                    <tr>
+                        <th> {{ $item->idlegajo }} </th>
+                        <td> {{ $item->apellido }}</td>
+                        <td> {{ $item->nombre }}</td>
+                        <td> {{ $item->direccion }}</td>
+                        <td> {{ $item->localidad }}</td>
+                        <td> {{ $item->id_tipo_documento }}</td>
+                        <td> {{ $item->tipo_documento }}</td>
+                        <td> {{ $item->nrodocumento }}</td>
+                        <td> {{ $item->codigopostal }}</td>
+                        <td> {{ $item->id_provincia }}</td>
+                        <td> {{ $item->provincia }}</td>
+                        
+                    </tr>                        
+                @endforeach
 
-        <nav class="navbar bg-body-tertiary">
-            <form class="container-fluid justify-content-start">
+            </tbody>
+          </table>
 
-            <button class="btn btn-primary me-2" type="button" onclick="window.location='{{ url("alta") }}'">Nuevo Empleado</button>
-            <button class="btn btn-primary me-2" type="button" onclick="window.location='{{ url("listado") }}'">Listado de Empleados</button>
-            </form>
-        </nav>
+          <hr>
+          <button class="btn btn-danger" type="button" onclick="window.location='{{ url("/") }}'">Salir</button>
 
+        </div>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
     

@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 class EmpleadosController extends Controller
 {
 
+    public function index(){
+        $sql=DB::select(" select * from empleados_detalle ");
+        return view("listado")->with("datos", $sql);
+    }
+
     public function alta(){
         $prov=DB::select(" select id_provincia,provincia from provincia ");
         $doc=DB::select(" select id_tipo_documento, tipo_documento from tipo_documento ");
